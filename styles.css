@@ -1,0 +1,159 @@
+:root {
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-violet: hsl(263, 55%, 52%);
+    --clr-gray: hsl(0, 0%, 81%);
+    --clr-blue-400: hsl(210, 46%, 95%);
+    --clr-blue-600: hsl(217, 19%, 35%);
+    --clr-blue-800: hsl(219, 29%, 14%);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    line-height: 1.5;
+    font-size: 1.3rem;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-blue-400);
+    padding: 10rem 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==============
+  Typo related stuff
+   ============== */
+
+.author-name {
+    font-weight: 600;
+}
+
+.author-status {
+    font-size: 1.1rem;
+    opacity: 0.5;
+}
+
+.quote-main {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.quote-sub {
+    opacity: 0.7;
+}
+
+/*===============
+ Layout Stuff 
+ ================*/
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira";
+
+    gap: 2.5rem;
+    width: 87%;
+    max-width: 1110px;
+}
+
+.testimonial {
+    background-color: var(--clr-gray);
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 5px 10px 10px rgba(0 0 0 / 0.3);
+    overflow: hidden;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.author-img {
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testimonial-daniel {
+    background-color: var(--clr-violet);
+    color: var(--clr-white);
+    grid-area: daniel;
+
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: right 20% top 0%;
+}
+
+.testimonial-jonathan {
+    background-color: var(--clr-blue-600);
+    color: var(--clr-white);
+    grid-area: jonathan;
+}
+
+.testimonial-jeanette {
+    background-color: var(--clr-white);
+    color: var(--clr-blue-600);
+    grid-area: jeanette;
+}
+
+.testimonial-patrick {
+    background-color: var(--clr-blue-800);
+    color: var(--clr-white);
+    grid-area: patrick;
+}
+
+.testimonial-kira {
+    background-color: var(--clr-white);
+    color: var(--clr-blue-600);
+    grid-area: kira;
+}
+
+/* Media Queries */
+
+@media (min-width: 700px) {
+    .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "daniel daniel "
+            "jonathan kira"
+            "jeanette kira"
+            "patrick patrick";
+    }
+}
+
+@media (min-width: 1100px) {
+    .testimonials {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "daniel daniel jonathan kira"
+            "jeanette patrick patrick kira";
+    }
+}
