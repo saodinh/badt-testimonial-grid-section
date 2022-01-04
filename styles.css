@@ -140,12 +140,11 @@ img {
 
 @media (min-width: 700px) {
     .testimonials {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
-            "daniel daniel "
-            "jonathan kira"
-            "jeanette kira"
-            "patrick patrick";
+            "daniel daniel jeanette"
+            "jonathan patrick"
+            " kira kira kira";
     }
 }
 
