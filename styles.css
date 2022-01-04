@@ -143,8 +143,8 @@ img {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             "daniel daniel jeanette"
-            "jonathan patrick"
-            " kira kira kira";
+            "jonathan patrick patrick"
+            "kira kira kira";
     }
 }
 
